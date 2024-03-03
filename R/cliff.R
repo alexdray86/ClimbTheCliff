@@ -15,6 +15,9 @@
 cliff <- function (climb_output, drug_data, mutation_data = NULL, min.mutation = 0, 
                     max.em.steps = 100, mode = "highres", regularization = "none", cancer_pattern='like') 
 {
+    sigmoid_ <- function(x, a){return( 1 / (1 + exp(-x + a)))}
+    mse <- function(tr, pr){ return( sum((tr - pr)^2) / length(tr) ) }
+    rmse <- function(tr, pr){ return( sqrt( sum((tr - pr)^2) / length(tr) ) ) }
     message("Prepare CLIFF input from CLIMB output, mutation data, and drug sensitivity data")
 	climb_expr = climb_output$expr.highres
 	climb_prop = climb_output$props.corrected
@@ -177,8 +180,3 @@ cliff <- function (climb_output, drug_data, mutation_data = NULL, min.mutation =
     }
     return(list(PI_hat_nk, mutation_data, climb_prop))
 }
-sigmoid_ <- function(x, a){
-    return( 1 / (1 + exp(-x + a)))
-}
-mse <- function(tr, pr){ return( sum((tr - pr)^2) / length(tr) ) }
-rmse <- function(tr, pr){ return( sqrt( sum((tr - pr)^2) / length(tr) ) ) }
