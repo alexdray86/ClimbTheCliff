@@ -1,3 +1,7 @@
+#' CLIFF gene selection
+#'
+#' Perform gene selection prior to CLIFF, using multiple rounds of lasso regression.
+#'
 #' @param bulk_mat matrix containing the input bulk matrix with gene expression
 #' @param drug_d data.frame containing a column named 'auc' with AUC values of drug sensitivity
 #' @param min.genes integer containing the minimum number of genes to consider

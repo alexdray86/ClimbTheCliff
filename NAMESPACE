@@ -3,3 +3,6 @@
 export(cliff)
 export(cliff_gene_selection)
 export(climb)
+export(mse)
+export(rmse)
+export(sigmoid_)
