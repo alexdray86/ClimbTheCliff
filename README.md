@@ -1,6 +1,6 @@
 # ClimbTheCliff
 
-An R package for deconvolution of bulk RNA-seq data using single-cell RNA-seq references, with specialized methods for cell-type abundance estimation, high-resolution cell-type-specific gene expression prediction, and drug sensitivity analysis.
+An R package for deconvolution of bulk RNA-seq data using single-cell RNA-seq references, with specialized methods for cell-type abundance estimation, high-resolution cell-type-specific gene expression prediction, and drug sensitivity analysis. From the manuscript `Computational deconvolution of drug sensitivity via single-cell–to–bulk transcriptome mapping` from Coudray et al. 2026.
 
 ## Installation
 
