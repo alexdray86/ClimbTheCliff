@@ -33,18 +33,6 @@ climb <- function (sc, bulk, mode = "abundance", up.lim = Inf, lambda = 0,
         patient_specific_DE = FALSE
         stopifnot(!all(is.na(conditions)))
     }
-    if (mode == "all+") {
-        if (verbose) {
-            message("ALL+ mode: prediction of cell-type abundance / high-resolution cell-type expression / DE analysis between conditions if provided AND at sample level")
-        }
-        if (verbose) {
-            message("WARNING: sample-level DE can take long!")
-        }
-        predict_abundance = TRUE
-        predict_expression = TRUE
-        DE_analysis = TRUE
-        patient_specific_DE = TRUE
-    }
     if (mode == "abundance") {
         if (verbose) {
             message("ABUNDANCE mode: predicting cell-type proportions in bulks")
@@ -62,16 +50,6 @@ climb <- function (sc, bulk, mode = "abundance", up.lim = Inf, lambda = 0,
         predict_expression = TRUE
         DE_analysis = FALSE
         patient_specific_DE = FALSE
-    }
-    if (mode == "DE.only") {
-        if (verbose) {
-            message("Running DE analysis based on existing CLIMB object")
-        }
-        predict_abundance = FALSE
-        predict_expression = FALSE
-        DE_analysis = TRUE
-        patient_specific_DE = FALSE
-        stopifnot(length(final_res) > 0)
     }
     num <- function(x) {
         return(as.numeric(as.character(x)))

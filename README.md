@@ -72,8 +72,6 @@ climb(sc, bulk, mode = "abundance", up.lim = Inf, lambda = 0,
   - `"abundance"`: Only predict cell-type proportions
   - `"expression"`: Predict both proportions and cell-type-specific expression
   - `"all"`: Predict proportions, expression, and perform DE analysis between conditions
-  - `"all+"`: Same as "all" plus per-sample DE analysis (computationally intensive)
-  - `"DE.only"`: Run DE analysis on existing CLIMB results
 - **`up.lim`**: Upper bound for coefficients (L-infinity norm constraint). Default: `Inf`
 - **`lambda`**: Regularization factor. Default: `0`
 - **`verbose`**: Print progress messages. Default: `TRUE`
