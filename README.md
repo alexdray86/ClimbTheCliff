@@ -256,23 +256,9 @@ cliff_output <- cliff(
   mutation_data = mutation_data,
   mode = "highres",
   regularization = "L2",
-  cancer_pattern = "Cancer"
+  cancer_pattern = "-like" # define cancerous cell type associated with somatic mutations
 )
 
-# Step 5: Analyze cell-type-specific drug responses
-cell_type_sensitivity <- cliff_output[[1]]
-print("Cell-type-specific drug sensitivity:")
-print(head(cell_type_sensitivity))
-
-# Calculate weighted AUC per sample
-weighted_auc <- rowSums(
-  cell_type_sensitivity * climb_output$props.corrected
-)
-print("Predicted vs actual AUC:")
-print(data.frame(
-  actual = drug_data$auc,
-  predicted = weighted_auc
-))
 ```
 
 ---
