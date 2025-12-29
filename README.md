@@ -49,16 +49,10 @@ The ClimbTheCliff package provides two main deconvolution methods:
 
 CLIMB (**C**ellular-level **LI**near **M**odel of **B**ulk deconvolution) is a method that deconvolutes bulk RNA-seq data using a single-cell RNA-seq reference dataset. It can predict:
 
-- **Cell-type proportions** in bulk samples
-- **High-resolution cell-type-specific gene expression** for each sample
-- **Differential expression** between conditions or at the sample level
-
-### Key Features
-
-- Uses an empirical Bayes procedure with subsampling for robust estimation
-- Handles cancer-specific differential expression
-- Supports multiple operation modes for different analysis needs
-- Provides both overall and sample-specific cell-type expression profiles
+- **Cell-type proportions** in bulk samples 
+- **Single-cell-to-bulk coefficients** linking each bulk sample to a panel of single-cells with coefficients
+- **Overall deconvolution of cell-type gene expression** (average over all sample)
+- **High-resolution deconvolution of cell-type gene expression** (for each sample)
 
 ### Usage
 
