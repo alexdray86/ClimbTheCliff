@@ -169,10 +169,11 @@ cliff(climb_output, drug_data, mutation_data = NULL,
 - **`min.mutation`**: Minimum number of samples with a mutation to include it in the model. Default: `0`
 - **`max.em.steps`**: Maximum number of EM algorithm iterations. Default: `100`
 - **`mode`**: Expression mode
-  - `"highres"`: Use high-resolution deconvoluted expression from CLIMB (recommended)
-  - `"overall"`: Use average cell-type expression across all samples
+  - `"overall"`: Use average cell-type expression across all samples (recommended)
+  - `"highres"`: Use high-resolution deconvoluted expression from CLIMB 
 - **`regularization`**: Regularization method
   - `"none"`: No regularization (default)
+  - `"L1"`: Apply lasso (L1) regularization
   - `"L2"`: Apply ridge (L2) regularization
 - **`cancer_pattern`**: String pattern to identify cancer cell-types for mutation attribution. Default: `"like"`
 
