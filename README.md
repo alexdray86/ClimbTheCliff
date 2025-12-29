@@ -95,10 +95,11 @@ climb(sc, bulk, mode = "abundance", up.lim = Inf, lambda = 0,
 
 CLIMB returns a list containing:
 
-- **`props.corrected`**: Matrix of cell-type proportions (samples × cell-types)
-- **`expr.highres`**: Array of high-resolution cell-type expression (samples × genes × cell-types)
-- **`expr.overall`**: Matrix of overall cell-type expression across all samples
-- Additional elements depending on the mode (DE results, coefficients, etc.)
+- **`props.corrected`**: Matrix of deconvoluted cell-type proportions after Empirical Bayes sub-sampling (samples × cell-types)
+- **`props.init`**: Matrix of deconvoluted cell-type proportions from the initial run of CLIMB (samples × cell-types)
+- **`coefs`**: Matrix of single-cell level coefficients mapping obtained by CLIMB before cell-type aggregation (samples × cells)
+- **`expr.highres`**: 3D Array of high-resolution cell-type expression (samples × genes × cell-types)
+- **`expr.overall`**: Matrix of deconvoluted cell-type expression averaged across all samples
 
 ### Example
 
